@@ -1,6 +1,19 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
 
+function embellish() {
+  let title = "simple title";
+
+  function formatter() {
+    title = "*****************" + title + "********************";
+    console.log(title);
+  }
+  return formatter;
+
+}
+
+innerFunction = embellish();
+innerFunction();
 
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
 
