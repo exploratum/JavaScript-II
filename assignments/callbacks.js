@@ -24,28 +24,60 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
 */
 
-
+/////////////////////////////////////////////////////////////
 function getLength(arr, cb) {
   // getLength passes the length of the array into the callback.
+  return(cb(arr.length));
 }
 
+getLength(items, function(length) {
+  console.log(length);
+})
+
+//////////////////////////////////////////////////////////////
 function last(arr, cb) {
   // last passes the last item of the array into the callback.
-}
+  return(cb(arr[arr.length -1]));
+};
 
+last(items, function(last) {
+  console.log(last);
+});
+
+//////////////////////////////////////////////////////////////
 function sumNums(x, y, cb) {
   // sumNums adds two numbers (x, y) and passes the result to the callback.
-}
+  let sum = x+y;
+  return(cb(sum));
+};
 
+sumNums(2,3,function(sum){
+  console.log(sum);
+});
+
+//////////////////////////////////////////////////////////////
 function multiplyNums(x, y, cb) {
   // multiplyNums multiplies two numbers and passes the result to the callback.
+  let product = x * y;
+  return cb(product);
 }
 
+multiplyNums(2,3, function(product) {
+  console.log(product);
+})
+
+//////////////////////////////////////////////////////////////
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
+  let present = list.includes(item);
+  return cb(present);
 }
 
+contains('yo-yo', items, function(present) {
+  console.log(present);
+});
+//////////////////////////////////////////////////////////////
 /* STRETCH PROBLEM */
 
 function removeDuplicates(array, cb) {
